@@ -1,51 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>For Sanya 💖</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Sanya 💖</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff0f5;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #d63384;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #a83279;
+    }
+    .about, .letter {
+      margin-top: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .gallery {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .gallery img {
+      max-width: 200px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Happy Birthday, Sanya! 🎉</h1>
-        <p>Countdown to your special day: <span id="countdown"></span></p>
-    </header>
+  <h1>Happy Birthday, Sanya! 🎉</h1>
+  <div class="countdown" id="countdown">Loading countdown...</div>
 
-    <section class="about">
-        <h2>About Sanya</h2>
-        <p>
-            Sanya is not only stunningly beautiful, but she has a personality that lights up every room.
-            She's sweet, caring, and charming in the most effortless way.
-            This site is a small gesture to show how much she's cherished. 💗
-        </p>
-    </section>
+  <div class="about">
+    <h2>About You 💕</h2>
+    <p>Sanya, you’re incredibly beautiful, full of charm, and have a heart that radiates kindness. This page is a tiny gesture from me to celebrate how amazing you are.</p>
+  </div>
 
-    <section class="gallery">
-        <h2>Our Memories 📸</h2>
-        <div class="grid">
-            <!-- Replace photo1.jpg, photo2.jpg with your actual photo filenames -->
-            <img src="images/photo1.jpg" alt="Sanya photo 1" />
-            <img src="images/photo2.jpg" alt="Sanya photo 2" />
-            <!-- Add more photos as needed -->
-        </div>
-    </section>
+  <div class="gallery" id="gallery">
+    <img src="https://i.ibb.co/3fJmvyn/sanya1.jpg" alt="Sanya 1" />
+    <img src="https://i.ibb.co/4Y2Z3MS/sanya2.jpg" alt="Sanya 2" />
+    <img src="https://i.ibb.co/fdNTsM6/sanya3.jpg" alt="Sanya 3" />
+    <img src="https://i.ibb.co/XSnMNRP/sanya4.jpg" alt="Sanya 4" />
+  </div>
 
-    <section class="letter">
-        <h2>A Letter to You 💌</h2>
-        <p>
-            Dear Sanya,<br /><br />
-            You’re one of the kindest souls I’ve ever met. Every moment with you is a memory I treasure.
-            Thank you for being you — sweet, smart, supportive, and so full of love.
-            I hope this year brings everything your heart desires. Happy birthday in advance! 💕<br /><br />
-            Love,<br />
-            Naman
-        </p>
-    </section>
+  <div class="letter">
+    <h2>A Letter From Naman 💌</h2>
+    <p>Dear Sanya,<br /><br />
+    Happy Birthday in advance! I just want to say how lucky I feel to have you in my life. You're sweet, thoughtful, and endlessly lovable. Every single day with you is special. This page is just a small surprise to show you how much you mean to me.<br /><br />
+    With love,<br />
+    Naman 💖
+    </p>
+  </div>
 
-    <footer>
-        <p>Made with ❤️ by Naman</p>
-    </footer>
+  <div class="footer">Made with 💝 by Naman</div>
+
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/1n6p4k.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const countdownEl = document.getElementById('countdown');
+    const birthday = new Date('2025-08-07T00:00:00');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = birthday - now;
+      if (diff <= 0) {
+        countdownEl.textContent = "It's today! 🎂";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+      countdownEl.textContent = `${days}d ${hours}h ${mins}m ${secs}s left!`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
 </body>
 </html>
