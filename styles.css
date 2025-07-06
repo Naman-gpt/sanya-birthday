@@ -1,0 +1,32 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #fff0f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+header {
+    background-color: #ff99cc;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+}
+.about, .gallery, .letter {
+    padding: 2rem;
+}
+.gallery .grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.gallery img {
+    max-width: 200px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+footer {
+    background: #ffe6f0;
+    text-align: center;
+    padding: 1rem;
+}
